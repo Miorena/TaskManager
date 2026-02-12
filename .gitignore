@@ -1,0 +1,30 @@
+```
+
+**`gitignore` content at the root:**
+```
+# Backend
+tasks-api/node_modules/
+tasks-api/database.sqlite
+
+# Frontend
+tasks-frontend/node_modules/
+tasks-frontend/build/
+
+# OS
+.DS_Store
+```
+
+**Structure finale :**
+```
+Task Manager/
+├── .git/
+├── .gitignore
+├── README.md
+├── tasks-api/
+│   ├── app.js
+│   ├── package.json
+│   └── ...
+└── tasks-frontend/
+    ├── src/
+    ├── package.json
+    └── ...
