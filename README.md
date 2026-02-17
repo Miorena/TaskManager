@@ -81,6 +81,11 @@ npm start
 
 The application will open at `http://localhost:3000`
 
+## ▶️ Quick Start with
+```
+./start.sh
+```
+
 ## 🔌 API Endpoints
 
 | Method | Endpoint      | Description               |
