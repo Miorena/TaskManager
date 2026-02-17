@@ -108,10 +108,6 @@ curl -X PATCH http://localhost:5000/tasks/1 \
   -d '{"isDone": true}'
 ```
 
-## 🎨 Screenshots
-
-> Add screenshots of your application here
-
 ## 🧪 Testing
 
 ### Backend
