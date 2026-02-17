@@ -81,7 +81,7 @@ npm start
 
 The application will open at `http://localhost:3000`
 
-## ▶️ Quick Start with
+## ▶️ Quick Start With This Script
 ```
 ./start.sh
 ```
