@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import ConfirmModal from "./ConfirmModal";
+import AddTaskModal from "./AddTaskModal";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [input, setInput] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState("");
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("date");
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // États pour le modal
   const [modalConfig, setModalConfig] = useState({
     isOpen: false,
     title: "",
@@ -35,13 +35,10 @@ function App() {
     }
   };
 
-  const addTask = async () => {
-    if (!input.trim()) return;
-
+  const addTask = async (title) => {
     try {
-      const response = await axios.post("/tasks", { title: input });
+      const response = await axios.post("/tasks", { title });
       setTasks([...tasks, response.data]);
-      setInput("");
     } catch (err) {
       console.error("Error adding task:", err);
     }
@@ -205,6 +202,12 @@ function App() {
         type={modalConfig.type}
       />
 
+      <AddTaskModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onAdd={addTask}
+      />
+
       <div className="container">
         <h1>Task Manager</h1>
 
@@ -212,17 +215,6 @@ function App() {
           <span className="stat">Total: {totalTasks}</span>
           <span className="stat">Active: {activeTasks}</span>
           <span className="stat">Completed: {completedTasks}</span>
-        </div>
-
-        <div className="input-group">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && addTask()}
-            placeholder="Add a new task..."
-          />
-          <button onClick={addTask}>Add Task</button>
         </div>
 
         <div className="controls">
@@ -331,6 +323,11 @@ function App() {
           )}
         </ul>
       </div>
+
+      {/* Bouton flottant pour ajouter une tâche */}
+      <button className="fab" onClick={() => setIsAddModalOpen(true)}>
+        +
+      </button>
     </div>
   );
 }

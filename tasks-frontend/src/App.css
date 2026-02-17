@@ -33,6 +33,7 @@ h1 {
   font-size: 2.5rem;
 }
 
+/*
 .input-group {
   display: flex;
   gap: 10px;
@@ -69,6 +70,7 @@ h1 {
   background: #5568d3;
   transform: translateY(-2px);
 }
+*/
 
 .task-list {
   list-style: none;
@@ -380,5 +382,64 @@ h1 {
 
   .delete-all-btn {
     width: 100%;
+  }
+}
+
+/* Bouton flottant (FAB - Floating Action Button) */
+.fab {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: 300;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+/* Animation au chargement */
+@keyframes fabEntry {
+  from {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.fab {
+  animation: fabEntry 0.5s ease 0.3s backwards;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .fab {
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
   }
 }
