@@ -140,19 +140,6 @@ NODE_ENV=development
 REACT_APP_API_URL=http://localhost:5000
 ```
 
-## 🚀 Deployment
-
-### Backend (Heroku/Railway/Render)
-1. Create a new app on your platform
-2. Connect your GitHub repository
-3. Set environment variables
-4. Deploy
-
-### Frontend (Vercel/Netlify)
-1. Build the production version: `npm run build`
-2. Deploy the `build/` folder
-3. Configure environment variables
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -162,10 +149,6 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👤 Author
 
