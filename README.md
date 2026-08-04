@@ -6,6 +6,7 @@ A full-stack task management application built with **Express.js** and **React**
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## 🚀 Features
 
@@ -14,29 +15,36 @@ A full-stack task management application built with **Express.js** and **React**
 - ✅ Modern and responsive UI
 - ✅ RESTful API architecture
 - ✅ Persistent data storage with SQLite
+- 🐳 Fully containerized development environment with **Docker Compose**
 
 ## 📁 Project Structure
 ```
 TaskManager/
-├── tasks-api/           # Backend - Express.js REST API
-│   ├── app.js           # Entry point
-│   ├── models/          # Sequelize models
-│   ├── routes/          # API routes
-│   ├── middleware/      # Custom middleware
+├── tasks-api/            # Backend - Express.js REST API
+│   ├── app.js            # Entry point
+│   ├── models/           # Sequelize models
+│   ├── routes/           # API routes
+│   ├── middleware/       # Custom middleware
+│   ├── Dockerfile        # Backend container definition
+│   ├── .dockerignore
 │   └── package.json
 │
-└── tasks-frontend/      # Frontend - React application
-    ├── src/
-    │   ├── App.js       # Main component
-    │   └── App.css      # Styles
-    ├── public/
-    └── package.json
+├── tasks-frontend/       # Frontend - React application
+│   ├── src/
+│   │   ├── App.js        # Main component
+│   │   └── App.css       # Styles
+│   ├── public/
+│   ├── Dockerfile        # Frontend container definition
+│   ├── .dockerignore
+│   └── package.json
+│
+└── docker-compose.yml    # Multi-container orchestration
 ```
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Node.js** - JavaScript runtime
+- **Node.js** - JavaScript runtime (`node:20-slim`)
 - **Express.js** - Web framework
 - **Sequelize** - ORM for database management
 - **SQLite** - Lightweight database
@@ -47,23 +55,20 @@ TaskManager/
 - **Axios** - HTTP client
 - **CSS3** - Modern styling with gradients and animations
 
-## 📦 Installation
+### DevOps & Infrastructure
+- **Docker** & **Docker Compose** - Application containerization
+
+## 🐳 Quick Start with Docker (Recommended)
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
 
-### Backend Setup
+### Running the App
+
+Run a single command to build and start both the backend and frontend containers:
+
 ```bash
-# Navigate to backend directory
-cd tasks-api
-
-# Install dependencies
-npm install
-
-# Start the server (runs on port 5000)
-npm run dev
-```
+docker compose up --build
 
 The API will be available at `http://localhost:5000`
 
@@ -78,8 +83,9 @@ npm install
 # Start the development server (runs on port 3000)
 npm start
 ```
+🎨 Frontend: http://localhost:3000
 
-The application will open at `http://localhost:3000`
+⚡ Backend API: http://localhost:5000
 
 ## ▶️ Quick Start With This Script
 ```
