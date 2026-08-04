@@ -2,7 +2,7 @@
 
 A full-stack task management application built with **Express.js** and **React**.
 
-![Task Manager](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
@@ -18,6 +18,7 @@ A full-stack task management application built with **Express.js** and **React**
 - 🐳 Fully containerized development environment with **Docker Compose**
 
 ## 📁 Project Structure
+
 ```
 TaskManager/
 ├── tasks-api/            # Backend - Express.js REST API
@@ -58,52 +59,57 @@ TaskManager/
 ### DevOps & Infrastructure
 - **Docker** & **Docker Compose** - Application containerization
 
-## 🐳 Quick Start with Docker (Recommended)
+## 🚀 Getting Started
 
-### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+### Option 1 — Docker (recommended)
 
-### Running the App
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
 
-Run a single command to build and start both the backend and frontend containers:
+Build and start both the backend and frontend containers with a single command:
 
 ```bash
 docker compose up --build
+```
 
-The API will be available at `http://localhost:5000`
+- 🎨 Frontend: http://localhost:3000
+- ⚡ Backend API: http://localhost:5000
 
-### Frontend Setup
+### Option 2 — Quick start script
+
 ```bash
-# Navigate to frontend directory
-cd tasks-frontend
-
-# Install dependencies
-npm install
-
-# Start the development server (runs on port 3000)
-npm start
-```
-🎨 Frontend: http://localhost:3000
-
-⚡ Backend API: http://localhost:5000
-
-## ▶️ Quick Start With This Script
-```
 ./start.sh
 ```
+
+### Option 3 — Manual setup
+
+**Backend**
+```bash
+cd tasks-api
+npm install
+npm start
+```
+⚡ API available at http://localhost:5000
+
+**Frontend**
+```bash
+cd tasks-frontend
+npm install
+npm start
+```
+🎨 Frontend available at http://localhost:3000
 
 ## 🔌 API Endpoints
 
 | Method | Endpoint      | Description               |
-|--------|--------------|---------------------------|
-| GET    | `/tasks`      | Get all tasks             |
-| GET    | `/tasks/:id`  | Get a specific task       |
-| POST   | `/tasks`      | Create a new task         |
-| PUT    | `/tasks/:id`  | Replace a task (full)     |
-| PATCH  | `/tasks/:id`  | Update a task (partial)   |
-| DELETE | `/tasks/:id`  | Delete a task             |
+|--------|---------------|----------------------------|
+| GET    | `/tasks`      | Get all tasks              |
+| GET    | `/tasks/:id`  | Get a specific task        |
+| POST   | `/tasks`      | Create a new task          |
+| PUT    | `/tasks/:id`  | Replace a task (full)      |
+| PATCH  | `/tasks/:id`  | Update a task (partial)    |
+| DELETE | `/tasks/:id`  | Delete a task               |
 
-### Example Request
+### Example Requests
 
 **Create a task:**
 ```bash
@@ -119,31 +125,31 @@ curl -X PATCH http://localhost:5000/tasks/1 \
   -d '{"isDone": true}'
 ```
 
-## 🧪 Testing
-
-### Backend
-```bash
-cd tasks-api
-# Add your test commands here
-```
-
-### Frontend
-```bash
-cd tasks-frontend
-npm test
-```
-
 ## 📝 Environment Variables
 
-### Backend (`tasks-api/.env`)
+**Backend** (`tasks-api/.env`)
 ```env
 PORT=5000
 NODE_ENV=development
 ```
 
-### Frontend (`tasks-frontend/.env`)
+**Frontend** (`tasks-frontend/.env`)
 ```env
 REACT_APP_API_URL=http://localhost:5000
+```
+
+## 🧪 Testing
+
+**Backend**
+```bash
+cd tasks-api
+# Add your test commands here
+```
+
+**Frontend**
+```bash
+cd tasks-frontend
+npm test
 ```
 
 ## 🤝 Contributing
@@ -158,7 +164,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 👤 Author
 
-**Your Name**
+**Miorena**
 - GitHub: [@Miorena](https://github.com/Miorena)
 
 ## 🙏 Acknowledgments
