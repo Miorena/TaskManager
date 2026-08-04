@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json()); // Sert à parser le body des requêtes entrantes
 
 app.get("/", (req, res) => {
-	res.json({ message: "Welcome on my API" });
+	res.json({ message: "Welcome on my task manager project" });
 });
 
 // Utiliser les routes tasks
@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
 // Démarrer le serveur après avoir synchronisé la DB
 syncDatabase()
 	.then(() => {
-		app.listen(PORT, () => {
+		app.listen(PORT, '0.0.0.0', () => {
 			console.log(`Server is running on http://localhost:${PORT}`);
 		});
 	})
